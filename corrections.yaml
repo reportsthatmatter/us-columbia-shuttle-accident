@@ -1,0 +1,7 @@
+# Human judgements about this document's text, applied deterministically as a
+# final pipeline pass, so re-running reproduces the same output.
+#
+# A correction describes the text; a pass describes how to read the source.
+# Every correction must match exactly once, or the build fails naming its id.
+version: 1
+corrections: []
