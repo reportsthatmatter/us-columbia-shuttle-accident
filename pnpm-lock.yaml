@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@rtm/ingest':
-        specifier: github:reportsthatmatter/ingest#v0.8.1
-        version: https://codeload.github.com/reportsthatmatter/ingest/tar.gz/056a915080bf7e6b70aa5e6b662f30949934bc0c
+        specifier: github:reportsthatmatter/ingest#v0.9.0
+        version: https://codeload.github.com/reportsthatmatter/ingest/tar.gz/99b1ead35cda7e77678f8926b32dd571d18770f1
 
 packages:
 
-  '@rtm/ingest@https://codeload.github.com/reportsthatmatter/ingest/tar.gz/056a915080bf7e6b70aa5e6b662f30949934bc0c':
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/reportsthatmatter/ingest/tar.gz/056a915080bf7e6b70aa5e6b662f30949934bc0c}
-    version: 0.8.1
+  '@rtm/ingest@https://codeload.github.com/reportsthatmatter/ingest/tar.gz/99b1ead35cda7e77678f8926b32dd571d18770f1':
+    resolution: {gitHosted: true, tarball: https://codeload.github.com/reportsthatmatter/ingest/tar.gz/99b1ead35cda7e77678f8926b32dd571d18770f1}
+    version: 0.9.0
 
   yaml@2.9.0:
     resolution: {integrity: sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==}
@@ -25,7 +25,7 @@ packages:
 
 snapshots:
 
-  '@rtm/ingest@https://codeload.github.com/reportsthatmatter/ingest/tar.gz/056a915080bf7e6b70aa5e6b662f30949934bc0c':
+  '@rtm/ingest@https://codeload.github.com/reportsthatmatter/ingest/tar.gz/99b1ead35cda7e77678f8926b32dd571d18770f1':
     dependencies:
       yaml: 2.9.0
 
