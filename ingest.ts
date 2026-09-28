@@ -1,4 +1,4 @@
-import { pipeline, columns, runningFurniture } from "@rtm/ingest";
+import { pipeline, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -21,5 +21,19 @@ export default pipeline({
   // Set in two columns, with a running header on every page. Both are
   // properties of the document, judged per page — its front matter and
   // full-page figures are single-column and are left alone.
-  passes: [columns(), runningFurniture()],
+  //
+  // Its structure is its contents (pp. 4-5): parts, chapters and appendices
+  // by label, sections by number. Each division opens under a banner
+  // ("CHAPTER 1") that repeats with only its number changed, so furniture
+  // must track the page to be furniture; sidebars, charts and quoted emails
+  // carry caps lines the contents does not list, which are minor headings,
+  // not sections; and findings, recommendations and observations ("F6.3-1")
+  // are set under a hanging label (reportsthatmatter-tk8).
+  passes: [
+    columns(),
+    runningFurniture({ numbersTrackPages: true }),
+    numberedSections(),
+    unlistedHeadingsMinor(),
+    hangingIndents(),
+  ],
 });
