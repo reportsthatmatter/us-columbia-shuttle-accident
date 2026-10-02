@@ -1,0 +1,33 @@
+{
+  "report": "columbia-accident",
+  "set": "held-out",
+  "edition": "The PDF's own structure tree (tagged PDF, InDesign styles, role-mapped)",
+  "licence": "Public domain: a work of the United States Government (17 U.S.C. § 105).",
+  "fetched": "2026-10-02",
+  "sources": [
+    {
+      "path": "archive/CAIB_lowres_full.pdf",
+      "sha256": "7b95608d7cbfd071c33790deeade6366a490815afcc5f8abf0edfefaa18c7855",
+      "bytes": 10330897
+    }
+  ],
+  "sources_note": "The reference is derived from the source PDF already in archive/, so no copy is kept under reference/raw/.",
+  "blocks": {
+    "path": "reference/blocks.jsonl",
+    "sha256": "dfc80cdfa35fbe14cca5d4ab400c68940d0debd7f3357429c7adea6bab06df7a",
+    "normaliser": "reportsthatmatter scripts/score/reference.py, adapter tagged, version 1",
+    "built": "2026-10-02",
+    "counts": {
+      "heading": 471,
+      "note": 310,
+      "paragraph": 2478
+    },
+    "markers": 0,
+    "markers_linked": 0,
+    "words": 159520
+  },
+  "caveats": [
+    "About a quarter of our text (figures, tables, front matter) is not in the tags.",
+    "Soft hyphens remain in the tag text."
+  ]
+}
