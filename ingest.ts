@@ -1,4 +1,4 @@
-import { pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents } from "@rtm/ingest";
+import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -30,6 +30,10 @@ export default pipeline({
   // not sections; and findings, recommendations and observations ("F6.3-1")
   // are set under a hanging label (reportsthatmatter-tk8).
   passes: [
+    // A paragraph run over a page break that opens on a capital, a digit or a
+    // quotation mark (or follows a full stop on a justified page) joins when the
+    // layout says it runs on: no first-line indent, same face (reportsthatmatter-38s.10).
+    layoutPageJoins(),
     columns(),
     runningFurniture({ numbersTrackPages: true }),
     numberedSections(),
