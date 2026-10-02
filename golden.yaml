@@ -1,0 +1,106 @@
+# Golden pages: ground truth for this report, read off the PDF page image and checked by `pnpm ingest verify`.
+# Format and rules: @rtm/ingest src/golden.ts and the site's docs/quality-harness.md ("Golden pages").
+# A page marked xfail is a known pipeline defect: it stays red here, verify stays green, and the bead says why.
+# Notes are endnotes, printed per chapter after the chapter: a body page defines none and references markers only.
+pages:
+  # Chapter opener: a large chapter title, a numbered section heading, three paragraphs, a figure caption; two endnote markers.
+  - pdf: 21
+    printed: 21
+    verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
+    note: "agrees with reference/adjudicated.yaml: a new block starts at the top of this page (split)"
+    features: [I, ordinary]
+    xfail: reportsthatmatter-g3h, reportsthatmatter-b94
+    xfail_only: [blocks, markers]
+    blocks:
+      - heading: "Chapter 1 The Evolution of the Space Shuttle Program"
+      - paragraph: {start: "More than two decades after its first flight", end: "for years to come."}
+      - paragraph: {start: "The Space Shuttle Program’s remarkable successes, however", end: "difficult and perilous endeavor."}
+      - paragraph: {start: "It is the view of the Columbia Accident Investigation Board", end: "accorded it."}
+      - heading: "1.1 Genesis of the Space Transportation System"
+      - paragraph: {start: "The origins of the Space Shuttle Program date to discussions", end: "fully reusable vehicle.", notes: [1, 2]}
+      - paragraph: {start: "Figure 1.1-1. Early concepts for the Space Shuttle", end: "commercial airliner."}
+    footnotes: []
+    markers: [1, 2]
+    must_read: ["successes, however, come with high costs"]
+  # A two-column page with a shaded sidebar: the paragraph that starts in the left column and ends below the sidebar, a bulleted
+  # quotation list inside the sidebar, and six notes.
+  - pdf: 100
+    printed: 100
+    verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
+    note: "agrees with reference/adjudicated.yaml: page 101 opens mid-paragraph (join)"
+    features: [C, D, F, ordinary]
+    xfail: reportsthatmatter-2cf, reportsthatmatter-b94
+    xfail_only: [blocks, markers, must_contain]
+    continues_previous: true
+    opens_with: "ing of the Shuttle’s hydrogen fuel"
+    blocks:
+      - paragraph: {start: "The Rogers Commission concluded", end: "proving it was safe.”", notes: [1]}
+      - paragraph: {start: "The Commission also found that NASA had missed warning signs", end: "could be tolerated.", notes: [2]}
+      - paragraph: {start: "During this period of increasing uncertainty", end: "were not working.", notes: [3]}
+      - paragraph: {start: "Still another factor influenced the decisions", end: "research and development phase.”", notes: [4]}
+      - paragraph: {start: "The Challenger accident had profound effects", end: "the cost of building the replacement Orbiter Endeavour.", notes: [6, 7]}
+      - heading: "SELECTED ROGERS COMMISSION RECOMMENDATIONS"
+      - list: {start: "“The faulty Solid Rocket Motor joint and seal must be changed", end: "consistent with its resources.”", notes: [5]}
+      - paragraph: {start: "It took NASA 32 months after the Challenger accident", continues: true}
+    footnotes: []
+    markers: [1, 2, 3, 4, 5, 6, 7]
+    must_contain: ["committee concluded that the recovery from the Challenger disaster cost the country $12 billion"]
+  # Mission Control transcript in two columns: each speaker turn is a line "Flight: “…”"; none may be cut or turned into a quotation.
+  - pdf: 43
+    printed: 43
+    verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
+    features: [A, C, D]
+    xfail: reportsthatmatter-98u
+    xfail_only: [must_contain, must_not_be_quote]
+    headings: []
+    must_contain:
+      - "Flight: “MMACS – Flight.” MMACS: “Flight – MMACS.” Flight: “And there’s no commonality between all these tire pressure instrumentations and the hydraulic return instrumentations.”"
+      - "MMACS: “No sir, there’s not. We’ve also lost the nose gear down talkback and the right main gear down talkback.”"
+      - "GNC: “If we have any reason to suspect any sort of controllability issue, I would keep the control cards handy on page 4-dash-13.”"
+    must_not_be_quote: ["pressure instrumentations and the hydraulic return instrumentations", "down talkback and the right main gear down talkback", "controllability issue, I would keep the control cards"]
+  # Endnotes for Chapter 5: 31 notes set in two columns, with a heading and a three-line preface; none of it is body text.
+  - pdf: 119
+    printed: 119
+    verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
+    features: [E, H]
+    xfail: reportsthatmatter-izw
+    xfail_only: [blocks, footnotes, markers]
+    blocks:
+      - heading: "ENDNOTES FOR CHAPTER 5"
+      - paragraph: {start: "The citations that contain a reference to “CAIB document”", end: "archived at the National Archives."}
+    footnotes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+    markers: []
+  # A table of crater-equation limits above the body, a small-caps subheading "Missed Opportunity 1" with its number.
+  - pdf: 145
+    printed: 145
+    verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
+    features: [tables, I, H]
+    xfail: reportsthatmatter-wck
+    xfail_only: [headings, must_contain]
+    headings: ["Missed Opportunity 1"]
+    must_contain:
+      - "Crater equation parameter limits: Crater Equation Parameter Applicable Range STS-107 Analysis L/d 1 – 20 3.3 L n/a ~ 20 inches"
+      - "On Sunday, Rodney Rocha e-mailed a Johnson Space Center Engineering Directorate manager"
+    must_not_be_quote: ["Crater Equation Parameter Applicable Range"]
+  # Bold subheads, a "Summary", then the chapter's findings: numbered F6.3-n paragraphs with a hanging label.
+  - pdf: 170
+    printed: 170
+    verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
+    features: [I, H, E]
+    xfail: reportsthatmatter-wck, reportsthatmatter-liv
+    xfail_only: [blocks]
+    blocks:
+      - heading: "A Lack of Effective Leadership"
+      - paragraph: {start: "The Shuttle Program, the Mission Management Team, and through it", end: "not asking or listening."}
+      - heading: "The Failure of Safety’s Role"
+      - paragraph: {start: "As will be discussed in Chapter 7, safety personnel were present", end: "also failed to follow up."}
+      - heading: "Summary"
+      - paragraph: {start: "Management decisions made during Columbia’s final flight", end: "the foam strike posed."}
+      - paragraph: {start: "Because this chapter has focused on key personnel", end: "Chapters 7 and 8."}
+      - heading: "Findings"
+      - heading: "Intercenter Photo Working Group"
+      - paragraph: {start: "F6.3-1 The foam strike was first seen by the Intercenter Photo Working Group", end: "improperly maintained lens."}
+      - paragraph: {start: "F6.3-2 The Chair of the Intercenter Photo Working Group", end: "Flight Day Two."}
+      - paragraph: {start: "F6.3-3 The Intercenter Photo Working Group distributed its first report", continues: true}
+    footnotes: []
+    markers: []
