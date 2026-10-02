@@ -6426,7 +6426,7 @@ NASA (D. Arabian) ca. 1979. 48
 
 Drew L. Goodlin, "Orbiter Tile Impact Testing, Final Report", SwRI Project
 
-# 18-7503-005, March 5, 1999. 49
+\# 18-7503-005, March 5, 1999. 49
 
 Allen J. Richardson, "Evaluation of Flight Experience & Test Results for
 
