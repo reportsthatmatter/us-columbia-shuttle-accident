@@ -1,4 +1,4 @@
-import { pipeline, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents } from "@rtm/ingest";
+import { pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -35,5 +35,11 @@ export default pipeline({
     numberedSections(),
     unlistedHeadingsMinor(),
     hangingIndents(),
+    // Findings and a body paragraph that stop mid-sentence at a page foot
+    // resumed as block quotations (3 cases).
+    pageBreakContinuations(),
+    // An endnote that wraps after "Project" opens a line "# 18-7503-005",
+    // which Markdown read as a heading (reportsthatmatter-6zo).
+    escapeLeadingHash(),
   ],
 });
