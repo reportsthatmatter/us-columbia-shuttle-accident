@@ -1,0 +1,196 @@
+report: columbia-accident
+adjudicated: 2026-10-02
+by: Claude (Sonnet 5.5), reading the PDF
+method: "20 page breaks drawn at random (seeded) from the page breaks the reference covers, plus 10 where our text and the reference disagreed. For each, pdftotext (reading order, so the two columns are not interleaved) of the two pages, answering: does a new block (paragraph, list item, quotation, heading, finding) start between the last body line of the old page's last column and the first of the new page, or does the block run on. Columbia sets paragraphs flush with a space between, so a new page that opens on a full sentence after a finished one was judged by content; those judgements carry a note. prev and next are the dataset's lines."
+breaks:
+  - page: 21
+    prev: "on Flight Day 7."
+    next: "The Evolution of the"
+    verdict: split
+    stratum: random
+    image: false
+    note: "chapter opening"
+  - page: 32
+    prev: "completion of testing on the Ball Strut Tie Rod Assembly."
+    next: "Testing was to be completed on January 15. This exception"
+    verdict: join
+    stratum: disagreement
+    image: false
+  - page: 34
+    prev: "et angle of attack, angle of sideslip, and dynamic pressure"
+    next: "as a function of Mach number to ensure that the structural"
+    verdict: join
+    stratum: disagreement
+    image: false
+  - page: 60
+    prev: "and relatively thin. The mass and hence the volume of the"
+    next: "foam was determined from the velocity estimates and their"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 63
+    prev: "this date"
+    next: "5.  January  18:  Object  reacquired  and  tracked  by  Cape"
+    verdict: split
+    stratum: random
+    image: false
+    note: "numbered list item"
+  - page: 71
+    prev: "tem pod, verifying that airflow through the breach and out"
+    next: "of the upper slot carried molten wing leading edge material"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 80
+    prev: "was required to establish the experimental protocol."
+    next: "Based on the results of Glenn Research Center sub-scale im-"
+    verdict: join
+    stratum: random
+    image: true
+    note: "probable join by content: the sentence elaborates the one before; a figure sits between; the page image was read"
+  - page: 101
+    prev: "flight,  NASA Associate Administrator  for  Space  Flight"
+    next: "Richard Truly  commented,  “We  will  always  have  to  trea"
+    verdict: join
+    stratum: disagreement
+    image: false
+  - page: 106
+    prev: "cks  and  balances  in  an  organization  were  unnecessary"
+    next: "and  sometimes  counterproductive,  and  those  carrying  ou"
+    verdict: join
+    stratum: disagreement
+    image: false
+  - page: 117
+    prev: "and Budget, in July 2001 NASA Administrator Dan Goldin"
+    next: "formed  an  International  Space  Station  Management  and"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 118
+    prev: "ated in a challenging and often turbulent environment. As"
+    next: "discussed  in  this  chapter,  there  were  at  least  three"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 153
+    prev: "started to comply with Haleʼs request."
+    next: "After the Department of Defense representatives were called,"
+    verdict: split
+    stratum: random
+    image: false
+    note: "by content: a new episode; no layout cue at a page top"
+  - page: 160
+    prev: "by  a  lack  of  proper  coordination.” [ET=External  Tank,"
+    next: "MOA=Memorandum of Agreement, POC=Point of Contact, CMOC=Chey"
+    verdict: join
+    stratum: disagreement
+    image: false
+    note: "a bracketed gloss continues"
+  - page: 166
+    prev: ". Previous opinions were that bailout was the only answer.”"
+    next: "In the Mission Evaluation Room, a safety representative from"
+    verdict: split
+    stratum: random
+    image: false
+    note: "the quotation ended; a new paragraph"
+  - page: 178
+    prev: "Mission Assurance  organization  deeply  engaged  at  every"
+    next: "level of Shuttle management: the Flight Readiness Review,"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 183
+    prev: "addition, contractors strive to provide recommendations"
+    next: "based on a technical need, uninfluenced by headquarters"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 184
+    prev: "Both the SUBSAFE and Naval Reactorsʼ organizational"
+    next: "approach separates the technical and funding authority"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 188
+    prev: "ey integration tasks, even though the Integration Office ap-"
+    next: "pears to be the more logical office to conduct them; the Or-"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 190
+    prev: "Program should have been able to detect the foam trend and"
+    next: "more fully appreciate the danger it represented. Recall that"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 196
+    prev: "oughout  the  Shuttle  Program  have  contributed  to  both"
+    next: "Shuttle  accidents.  Although  NASA  leaders  have  played"
+    verdict: join
+    stratum: disagreement
+    image: false
+  - page: 197
+    prev: "machine  behaved  properly,  so  that  signals  of  danger"
+    next: "were followed by all-clear signals – in other words, NASA"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 198
+    prev: "ing decisions in the years leading up to both accidents."
+    next: "The Board found that dangerous aspects of NASAʼs 1986"
+    verdict: unjudgeable
+    stratum: random
+    image: false
+    note: "cannot tell: no layout cue and the comparison may open a new paragraph"
+  - page: 207
+    prev: "Kennedy Space Center being readied for STS-107 in late 2002."
+    next: "Future of Human Space Flight"
+    verdict: split
+    stratum: random
+    image: false
+    note: "chapter opening"
+  - page: 211
+    prev: "cter, it is in the nationʼs interest to replace the Shuttle"
+    next: "as soon as possible as the primary means for transporting"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 219
+    prev: "ality control process. Marshall has a similar challenge. It"
+    next: "is  responsible  for  managing  several  different  Shuttle"
+    verdict: join
+    stratum: disagreement
+    image: false
+  - page: 220
+    prev: "and difficult to expand, which inhibits the ability"
+    next: "of  Quality  Assurance  to  process  improvement"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 221
+    prev: "se  must  be  performed  regardless  of  the  lower  flight"
+    next: "rate, which contributes to extensive downtime. The Shuttle"
+    verdict: join
+    stratum: random
+    image: false
+  - page: 226
+    prev: "other considerations."
+    next: "R3.8-2   Develop,  validate,  and  maintain  physics-based"
+    verdict: split
+    stratum: random
+    image: false
+    note: "a new recommendation"
+  - page: 231
+    prev: "e Kennedy Space Center, Florida, in preparation for STS-107."
+    next: "COLUMBIAACCIDENT INVESTIGATION BOARD"
+    verdict: split
+    stratum: random
+    image: false
+    note: "appendix opening"
+  - page: 241
+    prev: "Institute of Technology and a Ph.D. from Cornell University."
+    next: "SALLY T. RIDE, PH.D."
+    verdict: split
+    stratum: random
+    image: false
+    note: "a new biography entry"
