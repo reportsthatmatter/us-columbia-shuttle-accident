@@ -1,11 +1,11 @@
 {
-  "markdownSha": "943c1edf132d063f1183c33568309f6655e30ceea1f18218353fabf8ec410aea",
-  "words": 165677,
+  "markdownSha": "11e023982bc152ba976e010f84009a1e7537b49bb40ae05bff0790a15d172f97",
+  "words": 165759,
   "blocks": {
-    "heading": 205,
-    "quote": 450,
-    "list": 351,
-    "paragraph": 3228
+    "heading": 199,
+    "quote": 380,
+    "list": 349,
+    "paragraph": 2788
   },
   "headings": [
     "IN MEMORIAM",
@@ -70,7 +70,6 @@
     "4.1 Fault Tree",
     "4.2 Remaining Factors",
     "ENDNOTES FOR CHAPTER 4",
-    "ORB,FWD\"",
     "Part Two: Why The Accident Occurred",
     "Chapter 5: From Challenger to Columbia",
     "5.1 The Challenger Accident and its Aftermath",
@@ -90,8 +89,6 @@
     "5.7 The Return of Schedule Pressure",
     "5.8 Conclusion",
     "ENDNOTES FOR CHAPTER 5",
-    "Roger Guillemette, \"Vandenberg: Space Shuttle Launch and Landing",
-    "Henry Lambright, Transforming Government: Dan Goldin and the",
     "Chapter 6: Decision Making at NASA",
     "6.1 A History of Foam Anomalies",
     "DEFINITIONS",
@@ -125,8 +122,6 @@
     "MISSED OPPORTUNITIES",
     "6.4 Possibility of Rescue or Repair",
     "ENDNOTES FOR CHAPTER 6",
-    "Elisabeth Paté-Cornell and Paul S. Fischbeck, \"Risk Management",
-    "L. Rand, \"Impact Testing of Orbiter HRSI Tiles,\" Texas Engineering",
     "Chapter 7: The Accidentʼs Organizational Causes",
     "ORGANIZATIONAL CAUSE STATEMENT",
     "UNDERSTANDING CAUSES",
@@ -173,7 +168,6 @@
     "10.11 Test Equipment Upgrades",
     "10.12 Leadership/Managerial Training",
     "ENDNOTES FOR CHAPTER 10",
-    "Tobin, \"Range Safety Risk Assessments For Kennedy Space Center,\"",
     "Chapter 11: Recommendations",
     "PART ONE – THE ACCIDENT",
     "PART TWO – WHY THE ACCIDENT OCCURRED",
@@ -214,7 +208,7 @@
     "ADVISORS AND CONSULTANTS",
     "Notes"
   ],
-  "footnotes": 27,
-  "pageMarkers": 229,
+  "footnotes": 310,
+  "pageMarkers": 240,
   "poppler": "26.08.0"
 }

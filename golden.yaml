@@ -9,8 +9,6 @@ pages:
     verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
     note: "agrees with reference/adjudicated.yaml: a new block starts at the top of this page (split)"
     features: [I, ordinary]
-    xfail: reportsthatmatter-g3h, reportsthatmatter-b94
-    xfail_only: [blocks, markers]
     blocks:
       - heading: "Chapter 1 The Evolution of the Space Shuttle Program"
       - paragraph: {start: "More than two decades after its first flight", end: "for years to come."}
@@ -63,8 +61,6 @@ pages:
     printed: 119
     verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
     features: [E, H]
-    xfail: reportsthatmatter-izw
-    xfail_only: [blocks, footnotes, markers]
     blocks:
       - heading: "ENDNOTES FOR CHAPTER 5"
       - paragraph: {start: "The citations that contain a reference to “CAIB document”", end: "archived at the National Archives."}
