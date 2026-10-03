@@ -1,6 +1,6 @@
 # Fidelity review — Columbia Accident Investigation Board Report, Volume I
 
-Pages: 248  ·  Footnotes: 27  ·  Auto-fixes applied: 234  ·  Human corrections: 0
+Pages: 248  ·  Footnotes: 310  ·  Auto-fixes applied: 234  ·  Human corrections: 0
 
 **95 open**, 0 reviewed and judged correct.
 

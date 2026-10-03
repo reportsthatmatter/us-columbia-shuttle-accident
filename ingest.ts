@@ -1,4 +1,4 @@
-import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents } from "@rtm/ingest";
+import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -45,5 +45,13 @@ export default pipeline({
     // An endnote that wraps after "Project" opens a line "# 18-7503-005",
     // which Markdown read as a heading (reportsthatmatter-6zo).
     escapeLeadingHash(),
+    // Each chapter ends with its notes, "ENDNOTES FOR CHAPTER 5", set in two
+    // columns that pdftotext runs together line by line; read off the layout,
+    // they are notes, labelled by chapter, not wrapped lines in the body
+    // (reportsthatmatter-izw).
+    layoutEndnotes(),
+    // The body's markers are raised in the PDF; each links to its own
+    // chapter's note, never by page (reportsthatmatter-kgz8).
+    layoutMarkers({ scope: "chapter" }),
   ],
 });
