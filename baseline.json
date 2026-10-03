@@ -1,6 +1,6 @@
 {
-  "markdownSha": "943c1edf132d063f1183c33568309f6655e30ceea1f18218353fabf8ec410aea",
-  "words": 165677,
+  "markdownSha": "1ecd7775b2845dd58f5b09a7bf2553460b9ea7d66abb70653a25ac642edd3e0e",
+  "words": 165701,
   "blocks": {
     "heading": 205,
     "quote": 450,
@@ -215,6 +215,6 @@
     "Notes"
   ],
   "footnotes": 27,
-  "pageMarkers": 229,
+  "pageMarkers": 241,
   "poppler": "26.08.0"
 }
