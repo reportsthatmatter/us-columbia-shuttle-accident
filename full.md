@@ -2,7 +2,7 @@
 title: "Columbia Accident Investigation Board Report, Volume I"
 authors: "Columbia Accident Investigation Board"
 published_at: "August 2003"
-source_url: "https://www.nasa.gov/columbia/home/CAIB_Vol1.html"
+source_url: "https://www.nasa.gov/wp-content/uploads/2025/04/caib-report.pdf"
 pages: 248
 footnotes: 310
 ---

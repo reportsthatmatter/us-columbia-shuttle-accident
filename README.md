@@ -16,7 +16,7 @@ of NASA and support personnel.
 
 ## Materials
 
-Come from the NASA website at [http://www.nasa.gov/columbia/home/CAIB_Vol1.html](http://www.nasa.gov/columbia/home/CAIB_Vol1.html) 
+Come from the NASA website: the report is linked from [nasa.gov/remembering-columbia-sts-107](https://www.nasa.gov/remembering-columbia-sts-107/) as [caib-report.pdf](https://www.nasa.gov/wp-content/uploads/2025/04/caib-report.pdf) (all six volumes in one 3,535-page file; Volume I is its first 248 pages, which is what we ingest from `archive/CAIB_lowres_full.pdf`). The older `nasa.gov/columbia/home/CAIB_Vol1.html` now redirects to the memorial page (checked 2026-10-09). 
 
 See the datapackage.json for details.
 
