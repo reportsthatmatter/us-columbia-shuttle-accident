@@ -1,4 +1,4 @@
-import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers } from "@rtm/ingest";
+import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers, hyphenFragments } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -53,5 +53,7 @@ export default pipeline({
     // The body's markers are raised in the PDF; each links to its own
     // chapter's note, never by page (reportsthatmatter-kgz8).
     layoutMarkers({ scope: "chapter" }),
+    // Words broken at a line end that the document writes whole nowhere ("indel- ible"): closed when the head is no word (reportsthatmatter-g3h).
+    hyphenFragments(),
   ],
 });
