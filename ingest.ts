@@ -1,4 +1,4 @@
-import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers, hyphenFragments, divisionLabels, typographicHeadings } from "@rtm/ingest";
+import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers, hyphenFragments, divisionLabels, typographicHeadings, speakerTurns } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -57,7 +57,9 @@ export default pipeline({
     hyphenFragments(),
     // A lone "Findings" or "Issue" line is a division label, a heading (reportsthatmatter-liv).
     divisionLabels(),
+    // Wrapped lines of a Mission Control transcript turn stay in the turn, not a quotation (reportsthatmatter-98u).
+    speakerTurns(),
     // Subheadings set in the body's size: Futura where the text is Times, or Times bold (reportsthatmatter-wck).
-    typographicHeadings({ firstLevel: 4, skipRunIns: true, faces: [["Futura-Medium|15|#000000", "Times|15|#000000|b"]] }),
+    typographicHeadings({ firstLevel: 4, skipRunIns: true, maxChars: 85, faces: [["Futura-Medium|15|#000000", "Times|15|#000000|b"]] }),
   ],
 });

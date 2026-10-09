@@ -956,43 +956,15 @@ At 8:49 a.m. Eastern Standard Time (EI+289), the Orbiterʼs flight control syste
 
 The Maintenance, Mechanical, and Crew Systems (MMACS) officer and the Flight Director (Flight) had the following exchange beginning at 8:54:24 a.m. (EI+613).
 
-MMACS: "Flight – MMACS." Flight: "Go ahead, MMACS." MMACS: "FYI, Iʼve just lost four separate temperature
-
-> transducers on the left side of the vehicle, hydraulic return temperatures. Two of them on system one and one in each of systems two and three."
-
-Flight: "Four hyd [hydraulic] return temps?" MMACS: "To the left outboard and left inboard elevon." Flight: "Okay, is there anything common to them? DSC
-
-> [discrete signal conditioner] or MDM [multiplexerdemultiplexer] or anything? I mean, youʼre telling me you lost them all at exactly the same time?"
-
-MMACS: "No, not exactly. They were within probably four or five seconds of each other." Flight: "Okay, where are those, where is that instrumentation located?" MMACS: "All four of them are located in the aft part of the
-
-> left wing, right in front of the elevons, elevon actua- tors. And there is no commonality."
-
-Flight: "No commonality."
+MMACS: "Flight – MMACS." Flight: "Go ahead, MMACS." MMACS: "FYI, Iʼve just lost four separate temperature transducers on the left side of the vehicle, hydraulic return temperatures. Two of them on system one and one in each of systems two and three." Flight: "Four hyd [hydraulic] return temps?" MMACS: "To the left outboard and left inboard elevon." Flight: "Okay, is there anything common to them? DSC [discrete signal conditioner] or MDM [multiplexerdemultiplexer] or anything? I mean, youʼre telling me you lost them all at exactly the same time?" MMACS: "No, not exactly. They were within probably four or five seconds of each other." Flight: "Okay, where are those, where is that instrumentation located?" MMACS: "All four of them are located in the aft part of the left wing, right in front of the elevons, elevon actua- tors. And there is no commonality." Flight: "No commonality."
 
 At 8:56:02 a.m. (EI+713), the conversation between the Flight Director and the MMACS officer continues:
 
-Flight: "MMACS, tell me again which systems theyʼre for." MMACS: "Thatʼs all three hydraulic systems. Itʼs ... two of
-
-> them are to the left outboard elevon and two of them to the left inboard."
-
-Flight: "Okay, I got you."
+Flight: "MMACS, tell me again which systems theyʼre for." MMACS: "Thatʼs all three hydraulic systems. Itʼs ... two of them are to the left outboard elevon and two of them to the left inboard." Flight: "Okay, I got you."
 
 The Flight Director then continues to discuss indications with other Mission Control Center personnel, including the Guidance, Navigation, and Control officer (GNC).
 
-Flight: "GNC – Flight." GNC: "Flight – GNC." Flight: "Everything look good to you, control and rates and everything is nominal, right?" GNC: "Controlʼs been stable through the rolls that weʼve
-
-> done so far, flight. We have good trims. I donʼt see anything out of the ordinary."
-
-Flight: "Okay. And MMACS, Flight?" MMACS: "Flight – MMACS." Flight: "All other indications for your hydraulic system indications are good." MMACS: "Theyʼre all good. Weʼve had good quantities all the way across." Flight: "And the other temps are normal?" MMACS: "The other temps are normal, yes sir." Flight: "And when you say you lost these, are you saying
-
-> that they went to zero?" [Time: 8:57:59 a.m., EI+830] "Or, off-scale low?"
-
-MMACS: "All four of them are off-scale low. And they were
-
-> all staggered. They were, like I said, within several seconds of each other."
-
-Flight: "Okay."
+Flight: "GNC – Flight." GNC: "Flight – GNC." Flight: "Everything look good to you, control and rates and everything is nominal, right?" GNC: "Controlʼs been stable through the rolls that weʼve done so far, flight. We have good trims. I donʼt see anything out of the ordinary." Flight: "Okay. And MMACS, Flight?" MMACS: "Flight – MMACS." Flight: "All other indications for your hydraulic system indications are good." MMACS: "Theyʼre all good. Weʼve had good quantities all the way across." Flight: "And the other temps are normal?" MMACS: "The other temps are normal, yes sir." Flight: "And when you say you lost these, are you saying that they went to zero?" [Time: 8:57:59 a.m., EI+830] "Or, off-scale low?" MMACS: "All four of them are off-scale low. And they were all staggered. They were, like I said, within several seconds of each other." Flight: "Okay."
 
 At 8:58:00 a.m. (EI+831), Columbia crossed the New Mexico- Texas state line. Within the minute, a broken call came on the air-to-ground voice loop from Columbiaʼs commander, "And, uh, Hou …" This was followed by a call from MMACS about failed tire pressure sensors at 8:59:15 a.m. (EI+906).
 
@@ -1014,35 +986,17 @@ INCO: "Flight – INCO." Flight: "Go." INCO: "Just taking a few hits here. Weʼr
 
 The Flight Director then resumes discussion with the MMACS officer at 9:00:18 a.m. (EI+969).
 
-Flight: "MMACS – Flight." MMACS: "Flight – MMACS." Flight: "And thereʼs no commonality between all these tire
-
-> pressure instrumentations and the hydraulic return instrumentations."
-
-MMACS: "No sir, thereʼs not. Weʼve also lost the nose gear
-
-> down talkback and the right main gear down talkback."
-
-Flight: "Nose gear and right main gear down talkbacks?" MMACS: "Yes sir."
+Flight: "MMACS – Flight." MMACS: "Flight – MMACS." Flight: "And thereʼs no commonality between all these tire pressure instrumentations and the hydraulic return instrumentations." MMACS: "No sir, thereʼs not. Weʼve also lost the nose gear down talkback and the right main gear down talkback." Flight: "Nose gear and right main gear down talkbacks?" MMACS: "Yes sir."
 
 At 9:00:18 a.m. (EI+969), the postflight video and imagery analyses indicate that a catastrophic event occurred. Bright flashes suddenly enveloped the Orbiter, followed by a dramatic change in the trail of superheated air. This is considered the most likely time of the main breakup of Columbia. Because the loss of signal had occurred 46 seconds earlier, Mission Control had no insight into this event. Mission Control continued to work the loss-of-signal problem to regain communication with Columbia:
 
-INCO: "Flight – INCO, I didnʼt expect, uh, this bad of a hit on comm [communications]." Flight: "GC [Ground Control officer] how far are we from
+INCO: "Flight – INCO, I didnʼt expect, uh, this bad of a hit on comm [communications]." Flight: "GC [Ground Control officer] how far are we from UHF? Is that two-minute clock good?" GC: "Affirmative, Flight." GNC: "Flight – GNC." Flight: "Go."
 
-UHF? Is that two-minute clock good?" GC: "Affirmative, Flight." GNC: "Flight – GNC." Flight: "Go."
-
-GNC: "If we have any reason to suspect any sort of
-
-> controllability issue, I would keep the control cards handy on page 4-dash-13."
-
-Flight: "Copy."
+GNC: "If we have any reason to suspect any sort of controllability issue, I would keep the control cards handy on page 4-dash-13." Flight: "Copy."
 
 At 9:02:21 a.m. (EI+1092, or 18 minutes-plus), the Mission Control Center commentator reported, "Fourteen minutes to touchdown for Columbia at the Kennedy Space Center. Flight controllers are continuing to stand by to regain communications with the spacecraft."
 
-Flight: "INCO, we were rolled left last data we had and you
-
-> were expecting a little bit of ratty comm [communications], but not this long?"
-
-INCO: "Thatʼs correct, Flight. I expected it to be a little intermittent. And this is pretty solid right here." Flight: "No onboard system config [configuration] changes right before we lost data?" INCO: "That is correct, Flight. All looked good." Flight: "Still on string two and everything looked good?" INCO: "String two looking good."
+Flight: "INCO, we were rolled left last data we had and you were expecting a little bit of ratty comm [communications], but not this long?" INCO: "Thatʼs correct, Flight. I expected it to be a little intermittent. And this is pretty solid right here." Flight: "No onboard system config [configuration] changes right before we lost data?" INCO: "That is correct, Flight. All looked good." Flight: "Still on string two and everything looked good?" INCO: "String two looking good."
 
 The Ground Control officer then told the Flight Director that the Orbiter was within two minutes of acquiring the Kennedy Space Center ground station for communications, "Two minutes to MILA." The Flight Director told the CAPCOM to try another communications check with Columbia, including one on the UHF system (via MILA, the Kennedy Space Center tracking station):
 
@@ -1050,11 +1004,7 @@ CAPCOM: "Columbia, Houston, comm [communications] check." CAPCOM: "Columbia, Hou
 
 At 9:03:45 a.m. (EI+1176, or 19 minutes-plus), the Mission Control Center commentator reported, "CAPCOM Charlie Hobaugh calling Columbia on a UHF frequency as it approaches the Merritt Island (MILA) tracking station in Florida. Twelve-and-a-half minutes to touchdown, according to clocks in Mission Control."
 
-MMACS: "Flight – MMACS." Flight: "MMACS?" MMACS: "On the tire pressures, we did see them go erratic for
-
-> a little bit before they went away, so I do believe itʼs instrumentation."
-
-Flight: "Okay."
+MMACS: "Flight – MMACS." Flight: "MMACS?" MMACS: "On the tire pressures, we did see them go erratic for a little bit before they went away, so I do believe itʼs instrumentation." Flight: "Okay."
 
 The Flight Control Team still had no indications of any serious problems onboard the Orbiter. In Mission Control, there was no way to know the exact cause of the failed sensor measurements, and while there was concern for the extended loss of signal, the recourse was to continue to try to regain communications and in the meantime determine if the other systems, based on the last valid data, continued to appear as expected. The Flight Director told the CAPCOM to continue to try to raise Columbia via UHF:
 
@@ -1064,23 +1014,13 @@ CAPCOM: "Columbia, Houston, UHF comm [communications] check." CAPCOM: "Columbia,
 
 [continued from previous page]
 
-INCO: "Flight – INCO, SPC [stored program command]
-
-> just should have taken us to STDN low." [STDN is the Space Tracking and Data Network, or ground station communication mode]
-
-Flight: "Okay." Flight: "FDO, when are you expecting tracking? " [FDO
-
-> is the Flight Dynamics Officer in the Mission Control Center]
-
-FDO: "One minute ago, Flight." GC: "And Flight – GC, no C-band yet." Flight: "Copy." CAPCOM: "Columbia, Houston, UHF comm [communications] check." INCO: "Flight – INCO." Flight: "Go." INCO: "I could swap strings in the blind."
+INCO: "Flight – INCO, SPC [stored program command] just should have taken us to STDN low." [STDN is the Space Tracking and Data Network, or ground station communication mode] Flight: "Okay." Flight: "FDO, when are you expecting tracking? " [FDO is the Flight Dynamics Officer in the Mission Control Center] FDO: "One minute ago, Flight." GC: "And Flight – GC, no C-band yet." Flight: "Copy." CAPCOM: "Columbia, Houston, UHF comm [communications] check." INCO: "Flight – INCO." Flight: "Go." INCO: "I could swap strings in the blind."
 
 Flight: "Okay, command us over." INCO: "In work, Flight."
 
 At 09:08:25 a.m. (EI+1456, or 24 minutes-plus), the Instrumentation and Communications Officer reported, "Flight – INCO, Iʼve commanded string one in the blind," which indicated that the officer had executed a command sequence to Columbia to force the onboard S-band communications system to the backup string of avionics to try to regain communication, per the Flight Directorʼs direction in the previous call.
 
-GC: "And Flight – GC." Flight: "Go." GC: "MILAʼs taking one of their antennas off into a search mode [to try to find Columbia]." Flight: "Copy. FDO – Flight?" FDO: "Go ahead, Flight." Flight: "Did we get, have we gotten any tracking data?" FDO: "We got a blip of tracking data, it was a bad data
-
-> point, Flight. We do not believe that was the Orbiter [referring to an errant blip on the large front screen in the Mission Control, where Orbiter
+GC: "And Flight – GC." Flight: "Go." GC: "MILAʼs taking one of their antennas off into a search mode [to try to find Columbia]." Flight: "Copy. FDO – Flight?" FDO: "Go ahead, Flight." Flight: "Did we get, have we gotten any tracking data?" FDO: "We got a blip of tracking data, it was a bad data point, Flight. We do not believe that was the Orbiter [referring to an errant blip on the large front screen in the Mission Control, where Orbiter
 
 > tracking data is displayed.] Weʼre entering a search pattern with our C-bands at this time. We do not have any valid data at this time."
 
@@ -2081,11 +2021,9 @@ Reduced, off-nominal heating Fourteen seconds after the loss of the first sensor
 
 59:09 of some 150 wires that ran along the upper outside corner of the left wheel well showed a burn-through. In the next 50 seconds, more than 70 percent of the sensor wires in three cables in this area also burned through (see Figure 3.6-10). Investigators plotted the wiring run for every left-wing sensor, looking for a relationship between their location and time of failure.
 
-Only two sensor wires of 169 remained intact when the Modular Auxiliary Data System recorder stopped, indicat-
+Only two sensor wires of 169 remained intact when the Modular Auxiliary Data System recorder stopped, indicat-Percent Loss of Sensor Signals Versus Time In Left Wing and Wing Leading Edge Wire Bundles
 
 %%page 69%%
-
-#### Percent Loss of Sensor Signals Versus Time In Left Wing and Wing Leading Edge Wire Bundles
 
 V09T9895A
 
