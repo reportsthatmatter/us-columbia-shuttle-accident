@@ -48,8 +48,6 @@ pages:
     printed: 43
     verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
     features: [A, C, D]
-    xfail: reportsthatmatter-98u
-    xfail_only: [must_contain, must_not_be_quote]
     headings: []
     must_contain:
       - "Flight: “MMACS – Flight.” MMACS: “Flight – MMACS.” Flight: “And there’s no commonality between all these tire pressure instrumentations and the hydraulic return instrumentations.”"
@@ -83,8 +81,6 @@ pages:
     printed: 170
     verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
     features: [I, H, E]
-    xfail: reportsthatmatter-wck, reportsthatmatter-liv
-    xfail_only: [blocks]
     blocks:
       - heading: "A Lack of Effective Leadership"
       - paragraph: {start: "The Shuttle Program, the Mission Management Team, and through it", end: "not asking or listening."}

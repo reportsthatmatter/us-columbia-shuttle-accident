@@ -1,4 +1,4 @@
-import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers } from "@rtm/ingest";
+import { layoutPageJoins, pipeline, escapeLeadingHash, pageBreakContinuations, columns, runningFurniture, numberedSections, unlistedHeadingsMinor, hangingIndents, layoutEndnotes, layoutMarkers, hyphenFragments, divisionLabels, typographicHeadings, speakerTurns } from "@rtm/ingest";
 
 /**
  * How this report is built. Owned by the report: every decision that shaped
@@ -10,7 +10,7 @@ export default pipeline({
   title: "Columbia Accident Investigation Board Report, Volume I",
   authors: "Columbia Accident Investigation Board",
   published_at: "August 2003",
-  source_url: "https://www.nasa.gov/columbia/home/CAIB_Vol1.html",
+  source_url: "https://www.nasa.gov/wp-content/uploads/2025/04/caib-report.pdf",
   repo: ".",
   volumes: [
     {
@@ -53,5 +53,13 @@ export default pipeline({
     // The body's markers are raised in the PDF; each links to its own
     // chapter's note, never by page (reportsthatmatter-kgz8).
     layoutMarkers({ scope: "chapter" }),
+    // Words broken at a line end that the document writes whole nowhere ("indel- ible"): closed when the head is no word (reportsthatmatter-g3h).
+    hyphenFragments(),
+    // A lone "Findings" or "Issue" line is a division label, a heading (reportsthatmatter-liv).
+    divisionLabels(),
+    // Wrapped lines of a Mission Control transcript turn stay in the turn, not a quotation (reportsthatmatter-98u).
+    speakerTurns(),
+    // Subheadings set in the body's size: Futura where the text is Times, or Times bold (reportsthatmatter-wck).
+    typographicHeadings({ firstLevel: 4, skipRunIns: true, maxChars: 85, faces: [["Futura-Medium|15|#000000", "Times|15|#000000|b"]] }),
   ],
 });
