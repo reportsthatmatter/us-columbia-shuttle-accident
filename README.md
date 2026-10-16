@@ -20,3 +20,6 @@ Come from the NASA website: the report is linked from [nasa.gov/remembering-colu
 
 See the datapackage.json for details.
 
+## Licence
+
+Text of the report: US government report, no copyright notice; treated as public domain. Third-party photographs excluded. Not fully confirmed. Our markup, processing and editorial additions: CC BY 4.0. Code: MIT. Evidence, caveats and the full statement are in [LICENSE](LICENSE); the MIT text is in [LICENSE-MIT](LICENSE-MIT).
