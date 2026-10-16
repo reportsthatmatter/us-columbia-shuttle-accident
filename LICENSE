@@ -6,7 +6,7 @@ This repository holds a public report, the text we derive from it, and the code 
 1. The report's text
 --------------------
 
-The Columbia Accident Investigation Board's Report Volume I (August 2003) was produced by a board chartered by NASA, printed first by the Board and then by NASA and the Government Publishing Office. The PDF carries no copyright notice for the text. NASA states that its content "generally" is "not subject to copyright in the United States" (https://www.nasa.gov/nasa-brand-center/images-and-media/). We treat the report text as a work of the United States Government, in the public domain (17 U.S.C. § 105).
+The Columbia Accident Investigation Board's Report Volume I (August 2003) was produced by a board chartered by NASA, printed first by the Board and then by NASA and the Government Publishing Office. The PDF carries no copyright notice for the text. NASA's media usage guidelines say that NASA content (they name "images, audio, video, and media files") "generally are not subject to copyright in the United States" (https://www.nasa.gov/nasa-brand-center/images-and-media/); they do not speak to report text. We treat the report text as a work of the United States Government, in the public domain (17 U.S.C. § 105).
 
 We have not confirmed this against the Board itself: some Board members were not federal employees, and no document we have found states the report's copyright status in terms. The report credits third-party photographs (for example "© 2003" credits); we serve text only, and any such material is not covered by this statement.
 
@@ -22,5 +22,7 @@ The code that builds the text (ingest.ts and other TypeScript, JavaScript and Py
 
 Other files
 -----------
+
+Files under archive/ are copies of the report as its publisher issued it, kept so the text can be rebuilt and checked; they have the status described in section 1.
 
 Files under reference/ are copies of other editions of the report, kept to measure our text. They keep the licence recorded for them (in reference/manifest.json where one exists, or section 1 where this file says so) and are not covered by sections 2 and 3.
