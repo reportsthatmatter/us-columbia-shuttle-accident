@@ -24,7 +24,8 @@ const figureLabels = (): BodyPass => ({
     const page = at && context?.layout?.page(at.volume, at.pdfIndex);
     if (!page) return lines;
     const key = (t: string) => t.replace(/\s+/g, "");
-    const isFigure = (l: Line) => FIGURE_FACE.test(l.font) && !KEEP_FACE.has(l.font);
+    const isFigure = (l: Line) =>
+      FIGURE_FACE.test(l.font) && !KEEP_FACE.has(l.font) && l.color !== "#808080" && !(at!.pdfIndex === TUFTE_SLIDE && l.family.startsWith("Arial"));
     const body = new Set(page.lines.filter((l) => !isFigure(l)).map((l) => key(l.text)));
     // A figure's words, unless the page also sets the same words outside a figure.
     const figure = new Set(page.lines.filter(isFigure).map((l) => key(l.text)).filter((k) => k && !body.has(k)));
@@ -51,7 +52,9 @@ const figureLabels = (): BodyPass => ({
     return out;
   },
 });
-// The slide Tufte's analysis quotes (p.191) is the subject of the text: its words stay.
+// The slide Tufte's analysis quotes (p.191) is the subject of the text: its words stay, in every Arial
+// face it uses. So does the grey Arial of an e-mail's signature block ("Rodney Rocha (ES2)", p.163).
+const TUFTE_SLIDE = 191;
 const KEEP_FACE = new Set(["Arial|12|#000000|b", "Arial|9|#000000|b"]);
 
 /**
@@ -204,7 +207,7 @@ const sidebarRunOns = (): BodyPass => ({
       }
       if (!found || !between || !/^\s*[a-z]/.test(lines[i]) || LABEL.test(lines[i])) continue;
       let end = i;
-      while (end < lines.length && lines[end].trim()) end++;
+      while (end < lines.length && lines[end].trim() && !lines[end].startsWith("\u0000")) end++;
       lines = [...lines.slice(0, a + 1), ...lines.slice(i, end), "", ...lines.slice(a + 1, i), ...lines.slice(end)];
     }
     return lines;
