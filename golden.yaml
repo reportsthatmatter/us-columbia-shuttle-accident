@@ -27,8 +27,8 @@ pages:
     verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
     note: "agrees with reference/adjudicated.yaml: page 101 opens mid-paragraph (join)"
     features: [C, D, F, ordinary]
-    xfail: reportsthatmatter-2cf, reportsthatmatter-b94
-    xfail_only: [blocks, markers, must_contain]
+    xfail: reportsthatmatter-pfgn
+    xfail_only: [blocks, markers]
     continues_previous: true
     opens_with: "ing of the Shuttle’s hydrogen fuel"
     blocks:
@@ -69,7 +69,7 @@ pages:
     printed: 145
     verified_by: "Claude (Sonnet 5.5), 2026-10-02, against the page image"
     features: [tables, I, H]
-    xfail: reportsthatmatter-wck
+    xfail: reportsthatmatter-er5x
     xfail_only: [headings, must_contain]
     headings: ["Missed Opportunity 1"]
     must_contain:
