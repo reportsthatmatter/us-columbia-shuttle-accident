@@ -31,6 +31,7 @@ const figureLabels = (): BodyPass => ({
     const figure = new Set(page.lines.filter(isFigure).map((l) => key(l.text)).filter((k) => k && !body.has(k)));
     if (!figure.size) return lines;
     const longest = [...figure].sort((a, b) => b.length - a.length);
+    const figureWords = new Set(page.lines.filter(isFigure).flatMap((l) => l.text.trim().split(/\s+/)));
     const onlyFigure = (text: string) => {
       let rest = key(text);
       for (const f of longest) while (rest.includes(f)) rest = rest.replace(f, "");
@@ -44,6 +45,11 @@ const figureLabels = (): BodyPass => ({
       }
       // Nothing but a figure's words, one label or several run together ("Bipod Ramp   FeedLine").
       if (onlyFigure(line)) continue;
+      // A chart's ticks and labels that the text layer cut and joined otherwise than the layout did
+      // ("- 400 500 600 700 800 900 — 1000", p.68; "12.01 03.02", p.132): every word on the line is one
+      // the page's figures draw, and the line is none of the text's own.
+      const words = line.trim().split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w));
+      if (words.length && words.length <= 12 && !body.has(key(line)) && words.every((w) => figureWords.has(w))) continue;
       // A label set beside the text, three or more spaces apart from it.
       const segments = line.trim().split(/\s{3,}/);
       const kept = segments.filter((s) => !figure.has(key(s)));
@@ -154,7 +160,13 @@ const columnWraps = (): BodyPass => ({
       ...ix.page.lines.filter((l) => l.font === foot.font && Math.abs(l.left - foot.left) < foot.size / 2).map((l) => l.rightGapEm),
     );
     const full = foot.rightGapEm <= measure + 0.6;
-    if (head && head.font === foot.font && Math.abs(head.left - column) <= foot.size / 2 && !LABEL.test(lines[b]) && (open(lines[a]) || full)) {
+    // A foot and a head set in by the same amount from their own column's edge are the same paragraph's
+    // lines (a bullet's or a finding's hanging text: p.181, p.193). The left column's edge is the right
+    // column's less this document's column pitch, 397.5pt on every two-column page (26.5 ems of the 15pt
+    // body): a column of nothing but hanging text has no line at its edge to measure.
+    const leftEdge = column - 397.5;
+    const aligned = head && (Math.abs(head.left - column) <= foot.size / 2 || Math.abs(head.left - column - (foot.left - leftEdge)) <= foot.size / 2);
+    if (head && head.font === foot.font && aligned && !LABEL.test(lines[b]) && (open(lines[a]) || full)) {
       return [...lines.slice(0, a + 1), ...lines.slice(b)];
     }
     if (!open(lines[a]) || (head && head.font === foot.font)) return lines;
@@ -218,12 +230,13 @@ const sidebarRunOns = (): BodyPass => ({
  * A finding, recommendation or observation always opens its own paragraph ("F7.4-13", "R7.5-2", p.193 and
  * p.227). Set under a hanging label, one that follows the last line of the item above with no space between
  * was read as that item's next sentence once the page's own margin was measured ("…throughout the
- * organization. F7.4-13 There are conflicting roles…"): a blank line goes before each label.
+ * organization. F7.4-13 There are conflicting roles…"): a blank line goes before each label. So does a
+ * bullet set straight under a paragraph ("…that promote risk management. • Hazard Analysis:", p.188).
  */
 const labelBreaks = (): BodyPass => ({
   name: "labelBreaks",
   stage: "body",
-  run: (lines) => lines.flatMap((line, i) => (i > 0 && lines[i - 1].trim() && /^\s*[FRO]\d+\.\d+-\d+\s/.test(line) ? ["", line] : [line])),
+  run: (lines) => lines.flatMap((line, i) => (i > 0 && lines[i - 1].trim() && /^\s*(?:[FRO]\d+\.\d+-\d+\s|•\s)/.test(line) ? ["", line] : [line])),
 });
 
 /**
@@ -256,6 +269,41 @@ const insetBody = (): BodyPass => ({
       const inset = l && l.left - ix.page.left >= 1.5 * l.size;
       return inset && lead(moved) < 6 ? " ".repeat(6) + moved.trimStart() : moved;
     });
+  },
+});
+
+/**
+ * A bullet whose text runs on into further paragraphs, set at the bullet's hanging indent ("• Hazard Analysis:
+ * A fundamental element…", then "United Space Alliance, which is responsible for both" two columns in, p.188).
+ * Set in by two columns and no more, each line of those paragraphs was read as a paragraph of its own. They
+ * come back to the bullet's own margin, where they read as the paragraphs they are.
+ */
+const bulletParagraphs = (): BodyPass => ({
+  name: "bulletParagraphs",
+  stage: "body",
+  run(lines) {
+    const lead = (t: string) => t.length - t.trimStart().length;
+    const out = [...lines];
+    let hang = -1;
+    for (let i = 0; i < out.length; i++) {
+      const line = out[i];
+      if (!line.trim()) continue;
+      const opens = i === 0 || !out[i - 1].trim();
+      if (/^\s*•\s/.test(line)) {
+        const next = out[i + 1];
+        hang = next?.trim() && lead(next) > lead(line) ? lead(next) : -1;
+        continue;
+      }
+      if (!opens || hang < 0) continue;
+      let end = i;
+      while (end < out.length && out[end].trim()) end++;
+      const block = out.slice(i, end);
+      if (block.every((l) => lead(l) === hang)) {
+        for (let k = i; k < end; k++) out[k] = out[k].slice(hang);
+        i = end - 1;
+      } else hang = -1;
+    }
+    return out;
   },
 });
 
@@ -301,14 +349,15 @@ export default pipeline({
     // The passes below are this report's own (defined above), each on one page's lines after `columns`:
     // the figures' labels go, chapter 6's inset body comes to the margin, and a paragraph cut by a row
     // of a figure, by the gutter or by a sidebar is put back together (reportsthatmatter-wck,
-    // reportsthatmatter-2cf). Paragraphs carried over the gutter: 2,485 paragraphs before, 2,216 after;
-    // the layout oracle's paragraphs-oversplit 268 to 174, quotes-spurious 232 to 57.
+    // reportsthatmatter-2cf, reportsthatmatter-qehj). The layout oracle's paragraphs-oversplit 268 to 151,
+    // quotes-spurious 232 to 57.
     figureLabels(),
     insetBody(),
     closeRowGaps(),
     columnWraps(),
     sidebarRunOns(),
     labelBreaks(),
+    bulletParagraphs(),
     runningFurniture({ numbersTrackPages: true }),
     numberedSections(),
     unlistedHeadingsMinor(),

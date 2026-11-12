@@ -4,4 +4,20 @@
 # A correction describes the text; a pass describes how to read the source.
 # Every correction must match exactly once, or the build fails naming its id.
 version: 1
-corrections: []
+corrections:
+  # A quotation cut in three: the text layer's chart line ("12.01 03.02") taken out and the column wrap above it
+  # joined, the library then parts the indented quotation at each ellipsis (reportsthatmatter-qehj).
+  - id: c-0001
+    where: { volume: 1, printed: 132 }
+    find: "but to a lot of people,\n\nFebruary 19th just seemed like an arbitrary date …\n\nIt doesnʼt make sense"
+    replace: "but to a lot of people, February 19th just seemed like an arbitrary date … It doesnʼt make sense"
+    reason: one paragraph on the page; checked against the page image
+    added: 2026-11-13
+  # A word broken over the gutter inside a bullet item, rejoined with a space the hyphen pass cannot close
+  # ("careers" occurs nowhere else in the source) (reportsthatmatter-qehj).
+  - id: c-0002
+    where: { volume: 1, printed: 181 }
+    find: "eliminated, ca- reers in safety"
+    replace: "eliminated, careers in safety"
+    reason: line-end hyphenation; checked against the page image
+    added: 2026-11-13
